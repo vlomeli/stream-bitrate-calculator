@@ -1,3 +1,18 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionButtons = document.querySelectorAll(".accordion-button");
+
+  accordionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  });
+});
+
 function calculateBitrate() {
   // Get internet speed input
   const internetSpeedInput = document.getElementById("internetSpeed");
@@ -11,12 +26,19 @@ function calculateBitrate() {
 
   // Get resolution and frame rate inputs
   const resolution = document.getElementById("resolution").value;
-  const frameRate = parseFloat(document.getElementById("frameRate").value);
+  let frameRate = parseFloat(document.getElementById("frameRate").value);
 
   // Validate frame rate input
   if (isNaN(frameRate)) {
     alert("Please enter a valid number for Frame Rate.");
     return;
+  }
+
+  // Limit frame rate to maximum 60 FPS
+  if (frameRate > 60) {
+    frameRate = 60;
+    document.getElementById("frameRate").value = frameRate;
+    alert("Frame Rate reduced to 60 FPS maximum.");
   }
 
   // Get encoding technology input

@@ -1,19 +1,21 @@
 body {
-    
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: rgb(15, 15, 15);
+    background-color:  beige; /* Light gray background */
+    font-family: Arial, sans-serif;
+    color: #333333; /* Dark gray text */
 }
+
 .form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width:20%;
-    background-color: #3f3e3e;
+    width: 20%;
+    background-color: #333333; /* Dark gray form background */
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
@@ -27,6 +29,7 @@ body {
 
 .form label {
     margin-bottom: 5px; /* Reduce space between label and input */
+    color: #ffffff; /* White label text */
 }
 
 .form input,
@@ -41,23 +44,54 @@ body {
     outline: none;
 }
 
-.form button {
-    margin-top: 10px; /* Add some space above the button */
-    background-color: rgb(43, 43, 238);
-    color: white;
-    cursor: pointer;
+.form input,
+.form select {
+    background-color: #ffffff; /* White input/select background */
+    color: #333333; /* Dark gray input/select text */
 }
 
-.form-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width:30%;
-    height: 65%;
-    background-color: rgb(70, 65, 65);
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
+.form button {
+    margin-top: 10px; /* Add some space above the button */
+    background-color: #007bff; /* Primary blue button background */
+    color: #ffffff; /* White button text */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.accordion {
+    width: 30%;
+  
+    margin-top: 20px;
+}
+
+.accordion-item {
+    background-color: #333333; /* Dark gray accordion item background */
+    margin-bottom: 30px;
+    margin-left: 10px;
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+    background-color: #333333; /* Dark gray accordion button background */
+    color: #ffffff; /* White button text */
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    color: #ffffff; /* White text */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
